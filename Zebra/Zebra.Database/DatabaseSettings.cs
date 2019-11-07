@@ -1,4 +1,4 @@
-﻿namespace Zebra
+﻿namespace Zebra.Database
 {
     public interface IDatabaseSettings
     {

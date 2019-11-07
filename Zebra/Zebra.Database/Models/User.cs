@@ -1,7 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Zebra.Models
+namespace Zebra.Database.Models
 {
     public class User
     {

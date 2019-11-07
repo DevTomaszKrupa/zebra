@@ -1,8 +1,6 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using Zebra.Models;
-using Zebra.Services;
-using Pigoen.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using Zebra.Database.Models;
+using Zebra.Database.Repository;
 
 namespace Zebra.Controllers
 {
@@ -23,15 +21,9 @@ namespace Zebra.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult ProductList()
         {
             return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

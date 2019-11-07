@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Zebra.Services;
+using Zebra.Database;
+using Zebra.Database.Repository;
 
 namespace Zebra
 {

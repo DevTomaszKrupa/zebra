@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using MongoDB.Driver;
-using Zebra.Models;
+using Zebra.Database.Models;
 
-namespace Zebra.Services
+namespace Zebra.Database.Repository
 {
     public interface IUserRepository
     {
