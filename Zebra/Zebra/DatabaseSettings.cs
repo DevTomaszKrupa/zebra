@@ -1,4 +1,4 @@
-﻿namespace Pigeon
+﻿namespace Zebra
 {
     public interface IDatabaseSettings
     {

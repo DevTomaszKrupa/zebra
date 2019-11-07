@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Pigeon.Models;
-using Pigeon.Services;
+using Zebra.Models;
+using Zebra.Services;
 using Pigoen.Models;
 
-namespace Pigeon.Controllers
+namespace Zebra.Controllers
 {
     public class HomeController : Controller
     {

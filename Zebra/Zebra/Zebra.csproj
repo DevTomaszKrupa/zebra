@@ -4,8 +4,8 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <UserSecretsId>aspnet-Pigoen-6B5FA807-3440-4B0A-B769-D5D7B43C778C</UserSecretsId>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <AssemblyName>Pigeon</AssemblyName>
-    <RootNamespace>Pigeon</RootNamespace>
+    <AssemblyName>Zebra</AssemblyName>
+    <RootNamespace>Zebra</RootNamespace>
   </PropertyGroup>
 
 

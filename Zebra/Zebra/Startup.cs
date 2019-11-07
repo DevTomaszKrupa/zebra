@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Pigeon.Services;
+using Zebra.Services;
 
-namespace Pigeon
+namespace Zebra
 {
     public class Startup
     {

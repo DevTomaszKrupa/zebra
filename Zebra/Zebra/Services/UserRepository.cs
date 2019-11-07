@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using MongoDB.Driver;
-using Pigeon.Models;
+using Zebra.Models;
 
-namespace Pigeon.Services
+namespace Zebra.Services
 {
     public interface IUserRepository
     {
