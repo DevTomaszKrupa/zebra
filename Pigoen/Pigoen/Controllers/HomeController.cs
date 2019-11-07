@@ -1,17 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Pigeon.Models;
+using Pigeon.Services;
 using Pigoen.Models;
 
-namespace Pigoen.Controllers
+namespace Pigeon.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IProductRepository _productRepository;
+
+        public HomeController(IProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
+
         public IActionResult Index()
         {
+            _productRepository.Create(new Product
+                {Author = "asd", Category = "asdasdas", Description = 1, Name = "name"});
+            var test  = _productRepository.Get();
             return View();
         }
 
