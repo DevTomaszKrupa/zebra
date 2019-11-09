@@ -1,9 +1,45 @@
-﻿<div>
-    <div>Mleko</div>
-    <div>Mleko</div>
-    <div>Mleko</div>
-    <div>Mleko</div>
-    <div>Mleko</div>
-    <div>Mleko</div>
-    <div>Mleko</div>
+﻿@model Zebra.Models.ProductVM[]
+
+<div>
+    @foreach (var product in Model)
+    {
+        <div class="product-list__row">
+            <div>@product.Name</div>
+            <div>
+                <input id="product-input-@product.Id" type="number" />
+            </div>
+            <div>
+                <button class="product-item" data-productId="@product.Id">Dodaj</button>
+            </div>
+        </div>
+    }
 </div>
+
+
+<script>
+
+    //$(document).ready(() => search(''));
+    $('.product-item').on('click', productClicked);
+
+    function search(searchPhrase) {
+        $.ajax({
+            url: `/home/productlist?searchPhrase=${searchPhrase}`,
+            dataType: 'html',
+            success: function (data) {
+                $('#productList').html(data);
+            }
+        });
+    }
+
+    function productClicked(e) {
+        var productId = e.target.dataset.productid;
+        var count = $('#product-input-' + productId).val();
+        $.ajax({
+            url: `/home/addToShoppingCard?count=${count}&productId=${productId}`,
+            dataType: 'html',
+            success: function (data) {
+                $('#shopping-card').html(data);
+            }
+        });
+    }
+</script>

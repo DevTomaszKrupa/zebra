@@ -1,0 +1,9 @@
+﻿@model Zebra.ViewModels.ShoppingCardVM
+
+<div>
+    @foreach (var product in Model.Products)
+    {
+        <div>@product.Name</div>
+        <div>@product.Count</div>
+    }
+</div>

@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Zebra.Database.Models;
 
 namespace Zebra.Database.Repository
 {
     public interface IProductRepository
     {
-        List<Product> Get();
-        Product Get(string id);
+        List<Product> Get(string searchPhrase = "");
+        Product GetById(string id);
         Product Create(Product book);
         void Update(string id, Product bookIn);
         void Remove(Product bookIn);
@@ -26,10 +28,19 @@ namespace Zebra.Database.Repository
             _products = database.GetCollection<Product>("Products");
         }
 
-        public List<Product> Get() =>
-            _products.Find(book => true).ToList();
+        public List<Product> Get(string searchPhrase = "")
+        {
+            if (string.IsNullOrEmpty(searchPhrase))
+                return _products.Find(x => true).ToList();
 
-        public Product Get(string id) =>
+            return _products
+                    .Find(x => true)
+                    .ToList()
+                    .Where(x => x.Name.Contains(searchPhrase, StringComparison.InvariantCultureIgnoreCase))
+                    .ToList();
+        }
+
+        public Product GetById(string id) =>
             _products.Find(book => book.Id == id).FirstOrDefault();
 
         public Product Create(Product book)

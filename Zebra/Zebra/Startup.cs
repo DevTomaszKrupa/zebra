@@ -37,7 +37,8 @@ namespace Zebra
 
             services.AddSingleton<IProductRepository, ProductRepository>();
             services.AddSingleton<IUserRepository, UserRepository>();
-            
+            services.AddSingleton<IShoppingCardProductRepository, ShoppingCardProductRepository>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

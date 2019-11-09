@@ -2,16 +2,55 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div>
-    <input placeholder="Wyszukaj..."/>
+<div class="home-page-container">
+    <div>
+        <input id="search-input" placeholder="Wyszukaj..." />
+        <div id="productList"></div>
+    </div>
+    <div>
+        <div id="shopping-card">
+        </div>
+    </div>
 </div>
 
 <div>
-    <div>Mleko</div>
-    <div>Mleko</div>
-    <div>Mleko</div>
-    <div>Mleko</div>
-    <div>Mleko</div>
-    <div>Mleko</div>
-    <div>Mleko</div>
 </div>
+
+
+<script>
+
+    $(document).ready(() => {
+        search('');
+        getShoppingCard();
+    });
+
+    $('#search-input').on('keyup', delaySearch);
+
+    var delayTimer;
+    function delaySearch(e) {
+        clearTimeout(delayTimer);
+        delayTimer = setTimeout(() => {
+            search(e.target.value);
+        }, 1000);
+    }
+
+    function search(searchPhrase) {
+        $.ajax({
+            url: `/home/productlist?searchPhrase=${searchPhrase}`,
+            dataType: 'html',
+            success: function (data) {
+                $('#productList').html(data);
+            }
+        });
+    }
+
+    function getShoppingCard() {
+        $.ajax({
+            url: `/home/shoppingCard`,
+            dataType: 'html',
+            success: function (data) {
+                $('#shopping-card').html(data);
+            }
+        });
+    }
+</script>
