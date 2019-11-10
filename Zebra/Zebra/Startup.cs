@@ -5,8 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using RestEase;
 using Zebra.Database;
 using Zebra.Database.Repository;
+using Zebra.PandaSystem;
 
 namespace Zebra
 {
@@ -35,6 +37,7 @@ namespace Zebra
             services.AddSingleton<IDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
 
+            services.AddTransient(x => RestClient.For<IPandaApi>("https://localhost:44328/api"));
             services.AddSingleton<IProductRepository, ProductRepository>();
             services.AddSingleton<IUserRepository, UserRepository>();
             services.AddSingleton<IShoppingCardProductRepository, ShoppingCardProductRepository>();

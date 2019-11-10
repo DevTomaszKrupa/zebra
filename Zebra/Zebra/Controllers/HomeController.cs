@@ -31,7 +31,7 @@ namespace Zebra.Controllers
             var databaseProducts = _productRepository.Get(searchPhrase);
 
             var viewModels = databaseProducts
-                .Select(x => new ProductVM(x.Id, x.Name, x.Description.ToString()))
+                .Select(x => new ProductVM(x.Id, x.Name, x.Description))
                 .ToArray();
 
             return PartialView(viewModels);
