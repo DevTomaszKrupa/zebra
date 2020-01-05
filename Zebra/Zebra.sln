@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zebra", "Zebra\Zebra.csproj", "{8E009342-B5B9-4E99-A080-690F4D5E763F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zebra.Database", "Zebra.Database\Zebra.Database.csproj", "{91E5D3E4-8E3A-4F25-8222-5284E72CBA4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zebra.Database", "Zebra\Zebra.Database\Zebra.Database.csproj", "{176D3D68-8476-476F-86D3-E402B6DF6E31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{8E009342-B5B9-4E99-A080-690F4D5E763F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E009342-B5B9-4E99-A080-690F4D5E763F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E009342-B5B9-4E99-A080-690F4D5E763F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{91E5D3E4-8E3A-4F25-8222-5284E72CBA4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{91E5D3E4-8E3A-4F25-8222-5284E72CBA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{91E5D3E4-8E3A-4F25-8222-5284E72CBA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{91E5D3E4-8E3A-4F25-8222-5284E72CBA4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{176D3D68-8476-476F-86D3-E402B6DF6E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{176D3D68-8476-476F-86D3-E402B6DF6E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{176D3D68-8476-476F-86D3-E402B6DF6E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{176D3D68-8476-476F-86D3-E402B6DF6E31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

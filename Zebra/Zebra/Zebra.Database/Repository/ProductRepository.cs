@@ -10,9 +10,10 @@ namespace Zebra.Database.Repository
     {
         List<Product> Get(string searchPhrase = "");
         Product GetById(string id);
-        Product Create(Product book);
-        void Update(string id, Product bookIn);
-        void Remove(Product bookIn);
+        Product Create(Product product);
+        void CreateRange(List<Product> products);
+        void Update(string id, Product product);
+        void Remove(Product product);
         void Remove(string id);
     }
 
@@ -49,6 +50,9 @@ namespace Zebra.Database.Repository
             return book;
         }
 
+        public void CreateRange(List<Product> products)
+            => _products.InsertMany(products);
+        
         public void Update(string id, Product bookIn) =>
             _products.ReplaceOne(book => book.Id == id, bookIn);
 

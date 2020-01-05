@@ -20,9 +20,6 @@ namespace Zebra.Controllers
 
         public IActionResult Index()
         {
-            //_productRepository.Create(new Product
-            //{ Author = "asd", Category = "asdasdas", Description = 1, Name = "name" });
-            //var test = _productRepository.Get();
             return View();
         }
 
