@@ -16,8 +16,8 @@ services:
 
   zebra:
     image: 'zebra:latest'
-    depends_on:
-      - "mongo"
+    #depends_on:
+    #  - "mongo"
     build:
       context: .
       dockerfile: Dockerfile
