@@ -26,5 +26,5 @@ services:
       ASPNETCORE_ENVIRONMENT: Development
     ports:
        - "17450:80"  
-    networks:
-       - fafik-net
+   # networks:
+   #    - fafik-net
