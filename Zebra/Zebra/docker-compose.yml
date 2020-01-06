@@ -1,18 +1,18 @@
 version: '3.4'
 
-networks:
-  zebra-net:
-    driver: bridge
+#networks:
+#  zebra-net:
+#    driver: bridge
 
 services:
-  mongo:
-    image: 'mongo:4'
-    volumes:
-      - './data/mongo:/data/mongo'
-    networks:
-      - zebra-net
-    ports:
-        - "27017:27017"
+ # mongo:
+ #   image: 'mongo:4'
+ #   volumes:
+ #     - './data/mongo:/data/mongo'
+ #   networks:
+ #     - zebra-net
+ #   ports:
+ #       - "27017:27017"
 
   zebra:
     image: 'zebra:latest'
@@ -25,6 +25,6 @@ services:
       DB_CONNECTION_STRING: "mongodb://mongo:27017"
       ASPNETCORE_ENVIRONMENT: Development
     ports:
-       - "14805:80"  
+       - "17450:80"  
     networks:
-       - zebra-net
+       - fafik-net
