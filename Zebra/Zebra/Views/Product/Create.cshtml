@@ -1,0 +1,42 @@
+﻿@model Zebra.PandaSystem.Models.ProductDto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Dodaj nowy produkt</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form action="CreateConfirmed" method="post">
+            <div class="form-group">
+                <label for="Name" class="control-label">Nazwa</label>
+                @Html.EditorFor(x => x.Name, new { @class= "form-control"})
+            </div>
+            <div class="form-group">
+                <label for="Barcode" class="control-label">Kod kreskowy</label>
+                @Html.EditorFor(x => x.Barcode, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="Description" class="control-label">Opis</label>
+                @Html.EditorFor(x => x.Description, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="Category" class="control-label">Kategoria</label>
+                @Html.EditorFor(x => x.Category, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="Price" class="control-label">Cena</label>
+                @Html.EditorFor(x => x.Price, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="Count" class="control-label">Ilość</label>
+                @Html.EditorFor(x => x.Count, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <input type="submit" value="CreateConfirmed" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

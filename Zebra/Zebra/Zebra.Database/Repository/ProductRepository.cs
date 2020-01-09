@@ -15,6 +15,7 @@ namespace Zebra.Database.Repository
         void Update(string id, Product product);
         void Remove(Product product);
         void Remove(string id);
+        void Truncate();
     }
 
     public class ProductRepository : IProductRepository
@@ -61,5 +62,7 @@ namespace Zebra.Database.Repository
 
         public void Remove(string id) =>
             _products.DeleteOne(book => book.Id == id);
+        public void Truncate() =>
+            _products.DeleteMany(x => true);
     }
 }

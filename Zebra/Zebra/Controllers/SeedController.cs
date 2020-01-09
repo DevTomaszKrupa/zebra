@@ -33,6 +33,12 @@ namespace Zebra.Controllers
             return new ObjectResult("OK");
         }
 
+        public IActionResult Truncate()
+        {
+            _productRepository.Truncate();
+            return new ObjectResult("OK");
+        }
+
         private SeedData ReadJsonFile()
         {
             using (var r = new StreamReader("SeedProducts.json"))
