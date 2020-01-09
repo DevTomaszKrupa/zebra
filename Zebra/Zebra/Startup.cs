@@ -37,7 +37,7 @@ namespace Zebra
             services.AddSingleton<IDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<DatabaseSettings>>().Value);
 
-            var pandaUrl = "http://localhost:15800";
+            var pandaUrl = "http://panda-api:15800/api";
             services.AddTransient(x => RestClient.For<IPandaApi>(pandaUrl));
             services.AddSingleton<IProductRepository, ProductRepository>();
             services.AddSingleton<IUserRepository, UserRepository>();
