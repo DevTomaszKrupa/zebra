@@ -1,6 +1,7 @@
-﻿@model Zebra.ViewModels.ShoppingCardVM
+﻿@using Zebra.ViewModels
+@model Zebra.ViewModels.ShoppingCardVM
 
-<div>
+<div id="shopping-card-box">
     @foreach (var product in Model.Products)
     {
         <div class="shopping-card__row">
@@ -8,4 +9,31 @@
             <div>@product.Count</div>
         </div>
     }
+    @{
+        if (Model.Products.Count > 0)
+        {
+            <div>
+                <button id="clearButton">Wyczyść</button>
+            </div>
+        }
+        else
+        {
+            <div>Tutaj pojawią się twoje produkty...</div>
+        }
+    }
 </div>
+
+<script>
+
+    $('#clearButton').on('click', clear);
+
+    function clear() {
+        $.ajax({
+            type: 'post',
+            url: '/api/shoppingcard/delete',
+            success: function () {
+                $('#shopping-card-box').hide();
+            }
+        });
+    }
+</script>

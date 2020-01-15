@@ -13,6 +13,7 @@ namespace Zebra.Database.Repository
         void Update(string id, ShoppingCardProduct item);
         void Remove(ShoppingCardProduct item);
         void Remove(string id);
+        void Truncate();
     }
 
     public class ShoppingCardProductRepository : IShoppingCardProductRepository
@@ -50,5 +51,8 @@ namespace Zebra.Database.Repository
 
         public void Remove(string id) =>
             _shoppingCardProducts.DeleteOne(x => x.Id == id);
+
+        public void Truncate() =>
+            _shoppingCardProducts.DeleteMany(x => true);
     }
 }
