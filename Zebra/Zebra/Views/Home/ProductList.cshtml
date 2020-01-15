@@ -4,12 +4,12 @@
     @foreach (var product in Model)
     {
         <div class="product-list__row">
-            <div>@product.Name</div>
+            <div class="product-list__name">@product.Name</div>
             <div>
-                <input id="product-input-@product.Id" type="number" />
+                <input class="product-list__input" id="product-input-@product.Id" type="number" />
             </div>
             <div>
-                <button class="product-item" data-productId="@product.Id">Dodaj</button>
+                <button class="product-item" data-productId="@product.Id">+</button>
             </div>
         </div>
     }

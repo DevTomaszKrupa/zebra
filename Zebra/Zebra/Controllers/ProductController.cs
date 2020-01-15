@@ -1,21 +1,22 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Zebra.Database.Models;
 using Zebra.Database.Repository;
-using Zebra.PandaSystem;
 using Zebra.PandaSystem.Models;
+using Flurl.Http;
 
 namespace Zebra.Controllers
 {
     public class ProductController : Controller
     {
         private readonly IProductRepository _productRepository;
-        private readonly IPandaApi _pandaApi;
+        private readonly string _pandaUrl;
 
-        public ProductController(IProductRepository productRepository, IPandaApi pandaApi)
+        public ProductController(IProductRepository productRepository)
         {
             _productRepository = productRepository;
-            _pandaApi = pandaApi;
+            _pandaUrl = "http://panda-api/api";
         }
 
         public IActionResult Create()
@@ -24,7 +25,7 @@ namespace Zebra.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateConfirmed(ProductDto model)
+        public async Task<IActionResult> CreateConfirmed(ProductDto model)
         {
             _productRepository.Create(new Product
             {
@@ -39,7 +40,7 @@ namespace Zebra.Controllers
             var products = _productRepository.Get().Select(x => new ProductDto
             {
                 Name = x.Name,
-                Barcode =  x.Barcode,
+                Barcode = x.Barcode,
                 Category = x.Category,
                 Count = x.Count,
                 Description = x.Description,
@@ -52,7 +53,11 @@ namespace Zebra.Controllers
                 Products = products,
                 ShopUniqueCode = "ffa_231_dasdk21_213"
             };
-            _pandaApi.BulkUpdate(bulkUpdateReq);
+
+            var bulkUpdateUrl = _pandaUrl + "/product";
+
+            await bulkUpdateUrl.PostJsonAsync(bulkUpdateReq);
+
             return Redirect("/Home");
         }
     }

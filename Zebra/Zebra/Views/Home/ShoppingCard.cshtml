@@ -3,7 +3,9 @@
 <div>
     @foreach (var product in Model.Products)
     {
-        <div>@product.Name</div>
-        <div>@product.Count</div>
+        <div class="shopping-card__row">
+            <div class="shopping-card__name">@product.Name</div>
+            <div>@product.Count</div>
+        </div>
     }
 </div>

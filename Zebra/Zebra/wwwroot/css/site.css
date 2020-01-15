@@ -2,68 +2,171 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    /*background-color: #1b3742;*/
+    background-color: #a69d79;
+    font-family: 'Inria Serif', serif;
 }
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+/* Home */
+
+#search-input {
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .home-page-container {
     display: flex;
     justify-content: space-between;
-}
-
-.product-list__row {
-    display: flex;
+    margin-top: 3rem;
 }
 
 .home__lists {
     display: flex;
+}
+
+#shopping-card {
+}
+
+.home-tab {
+    width: 50%;
+    -webkit-box-shadow: 0 0 20px -2px rgba(0,0,0,0.65);
+    -moz-box-shadow: 0 0 20px -2px rgba(0,0,0,0.65);
+    box-shadow: 0 0 20px -2px rgba(0,0,0,0.65);
+    margin-right: 3.5rem;
+    padding: 3rem;
+    color: black;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.tab-header {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.home-tab--green {
+    background-color: #f1f4d8;
+}
+
+.home-tab--light {
+    background-color: #f1f4d8;
+}
+
+/* Shopping card*/
+.shopping-card__row {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+}
+
+    .shopping-card__row:hover {
+        background-color: #5a5442;
+        color: #f9fcea;
+    }
+
+.shopping-card__name {
+    flex-grow: 1;
+}
+/* Product list*/
+.product-list__row {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+}
+
+    .product-list__row:hover {
+        background-color: #5a5442;
+        color: #f9fcea;
+    }
+
+.product-list__name {
+    flex-grow: 1;
+}
+
+.product-list__input {
+    width: 40px;
+}
+
+/* Nav bar*/
+
+.zebra-container {
+    padding: 0 15rem;
+}
+
+.navbar {
+    background-color: #080d0a !important;
+    color: white;
+}
+
+.navbar-brand {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.zebra-footer {
+    background-color: #080d0a !important;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center !important;
 }

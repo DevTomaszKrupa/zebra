@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  mongo:
+    image: 'mongo:4'
+    volumes:
+      - './data/mongo:/data/mongo'
+    networks:
+      - shared
+    ports:
+        - "27017:27017"
+
+  zebra:
+    image: 'zebra:latest'
+    depends_on:
+      - "mongo"
+    build:
+      context: .
+      dockerfile: 'Zebra/Dockerfile'
+    environment:
+      DB_CONNECTION_STRING: "mongodb://mongo:27017"
+      ASPNETCORE_ENVIRONMENT: Development
+    ports:
+       - "17450:80"  
+    networks:
+      - shared
+
+networks:
+  shared: 
+    external:
+      name: shared

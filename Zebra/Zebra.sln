@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zebra", "Zebra\Zebra.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zebra.Database", "Zebra\Zebra.Database\Zebra.Database.csproj", "{176D3D68-8476-476F-86D3-E402B6DF6E31}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{94404C10-ED23-4EEC-A90D-7FE8165BC59B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{176D3D68-8476-476F-86D3-E402B6DF6E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{176D3D68-8476-476F-86D3-E402B6DF6E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{176D3D68-8476-476F-86D3-E402B6DF6E31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94404C10-ED23-4EEC-A90D-7FE8165BC59B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94404C10-ED23-4EEC-A90D-7FE8165BC59B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94404C10-ED23-4EEC-A90D-7FE8165BC59B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94404C10-ED23-4EEC-A90D-7FE8165BC59B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

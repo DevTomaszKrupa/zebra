@@ -1,10 +1,10 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build-env
 WORKDIR /app
 
-COPY *.csproj ./
+COPY Zebra/*.csproj ./
 RUN dotnet restore
 
-COPY . ./
+COPY Zebra/. ./
 RUN dotnet publish -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
