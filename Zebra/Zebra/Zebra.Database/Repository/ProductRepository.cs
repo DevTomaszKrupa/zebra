@@ -12,9 +12,6 @@ namespace Zebra.Database.Repository
         Product GetById(string id);
         Product Create(Product product);
         void CreateRange(List<Product> products);
-        void Update(string id, Product product);
-        void Remove(Product product);
-        void Remove(string id);
         void Truncate();
     }
 
@@ -54,14 +51,6 @@ namespace Zebra.Database.Repository
         public void CreateRange(List<Product> products)
             => _products.InsertMany(products);
         
-        public void Update(string id, Product bookIn) =>
-            _products.ReplaceOne(book => book.Id == id, bookIn);
-
-        public void Remove(Product bookIn) =>
-            _products.DeleteOne(book => book.Id == bookIn.Id);
-
-        public void Remove(string id) =>
-            _products.DeleteOne(book => book.Id == id);
         public void Truncate() =>
             _products.DeleteMany(x => true);
     }
